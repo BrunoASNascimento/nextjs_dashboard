@@ -264,13 +264,24 @@ function Dashboard() {
             <CardBody>
               <Table
                 tableHeaderColor="warning"
-                tableHead={["ID", "Name", "Salary", "Country"]}
-                tableData={[
-                  ["1", "Dakota Rice", "$36,738", "Niger"],
-                  ["2", "Minerva Hooper", "$23,789", "Curaçao"],
-                  ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
-                  ["4", "Philip Chaney", "$38,735", "Korea, South"],
+                tableHead={[
+                  "WorkItemid",
+                  "title",
+                  "type",
+                  "Corpnon",
+                  "projectcategory",
+                  "financialvalue",
+                  "experiencevalue",
+                  "rrsvalue",
+                  "score",
+                  "sprints",
+                  "allocation",
+                  "designeffort",
+                  "objective",
+                  "kr",
+                  "Update",
                 ]}
+                tableData={dataTable}
               />
             </CardBody>
           </Card>

@@ -37,13 +37,75 @@ export default function CustomTable(props) {
           {tableData.map((prop, key) => {
             return (
               <TableRow key={key} className={classes.tableBodyRow}>
-                {prop.map((prop, key) => {
-                  return (
-                    <TableCell className={classes.tableCell} key={key}>
-                      {prop}
-                    </TableCell>
-                  );
-                })}
+                <TableCell
+                  className={classes.tableCell}
+                  key={`${key}_WorkItemid`}
+                >
+                  {prop.WorkItemid}
+                </TableCell>
+                <TableCell className={classes.tableCell} key={`${key}_title`}>
+                  {prop.title}
+                </TableCell>
+                <TableCell className={classes.tableCell} key={`${key}_type`}>
+                  {prop.type}
+                </TableCell>
+                <TableCell className={classes.tableCell} key={`${key}_Corpnon`}>
+                  {prop.Corpnon}
+                </TableCell>
+                <TableCell
+                  className={classes.tableCell}
+                  key={`${key}_projectcategory`}
+                >
+                  {prop.projectcategory}
+                </TableCell>
+                <TableCell
+                  className={classes.tableCell}
+                  key={`${key}_financialvalue`}
+                >
+                  {prop.financialvalue}
+                </TableCell>
+                <TableCell
+                  className={classes.tableCell}
+                  key={`${key}_experiencevalue`}
+                >
+                  {prop.experiencevalue}
+                </TableCell>
+                <TableCell
+                  className={classes.tableCell}
+                  key={`${key}_rrsvalue`}
+                >
+                  {prop.rrsvalue}
+                </TableCell>
+                <TableCell className={classes.tableCell} key={`${key}_score`}>
+                  {prop.score}
+                </TableCell>
+                <TableCell className={classes.tableCell} key={`${key}_sprints`}>
+                  {prop.sprints}
+                </TableCell>
+                <TableCell
+                  className={classes.tableCell}
+                  key={`${key}_allocation`}
+                >
+                  {prop.allocation}
+                </TableCell>
+                <TableCell
+                  className={classes.tableCell}
+                  key={`${key}_designeffort`}
+                >
+                  {prop.designeffort}
+                </TableCell>
+                <TableCell
+                  className={classes.tableCell}
+                  key={`${key}_objective`}
+                >
+                  {prop.objective}
+                </TableCell>
+                <TableCell className={classes.tableCell} key={`${key}_kr`}>
+                  {prop.kr}
+                </TableCell>
+                <TableCell className={classes.tableCell} key={`${key}`}>
+                  <a href={`api/update-info/${key}`}>Update</a>
+                </TableCell>
               </TableRow>
             );
           })}
@@ -68,5 +130,5 @@ CustomTable.propTypes = {
     "gray",
   ]),
   tableHead: PropTypes.arrayOf(PropTypes.string),
-  tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  tableData: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.objectOf)),
 };

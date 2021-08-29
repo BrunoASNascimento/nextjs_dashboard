@@ -44,6 +44,23 @@ import styles from "assets/jss/nextjs-material-dashboard/views/dashboardStyle.js
 function Dashboard() {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
+  const [dataTable, setDataTable] = React.useState([]);
+  React.useEffect(function () {
+    fetch("/api/data-table", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((respostaCompleta) => {
+        const dataTableInfo = respostaCompleta;
+        setDataTable(dataTableInfo);
+      });
+  }, []);
+
+  console.log(dataTable);
   return (
     <div>
       {/* <GridContainer>
@@ -197,7 +214,7 @@ function Dashboard() {
         </GridItem>
       </GridContainer>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={6}>
+        {/* <GridItem xs={12} sm={12} md={6}>
           <CustomTabs
             title="Tasks:"
             headerColor="dark"
@@ -237,8 +254,8 @@ function Dashboard() {
               },
             ]}
           />
-        </GridItem>
-        <GridItem xs={12} sm={12} md={6}>
+        </GridItem> */}
+        <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="warning">
               <h4 className={classes.cardTitleWhite}>Table test</h4>

@@ -29,67 +29,67 @@ const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    rtlName: "لوحة القيادة",
+
     icon: Dashboard,
 
     layout: "/admin",
   },
-  {
-    path: "/user-profile",
-    name: "User Profile",
-    rtlName: "ملف تعريفي للمستخدم",
-    icon: Person,
+  // {
+  //   path: "/user-profile",
+  //   name: "User Profile",
 
-    layout: "/admin",
-  },
-  {
-    path: "/table-list",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
+  //   icon: Person,
 
-    layout: "/admin",
-  },
-  {
-    path: "/typography",
-    name: "Typography",
-    rtlName: "طباعة",
-    icon: LibraryBooks,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/table-list",
+  //   name: "Table List",
 
-    layout: "/admin",
-  },
-  {
-    path: "/icons",
-    name: "Icons",
-    rtlName: "الرموز",
-    icon: BubbleChart,
+  //   icon: "content_paste",
 
-    layout: "/admin",
-  },
-  {
-    path: "/maps",
-    name: "Maps",
-    rtlName: "خرائط",
-    icon: LocationOn,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/typography",
+  //   name: "Typography",
 
-    layout: "/admin",
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    rtlName: "إخطارات",
-    icon: Notifications,
+  //   icon: LibraryBooks,
 
-    layout: "/admin",
-  },
-  {
-    path: "/rtl-page",
-    name: "RTL Support",
-    rtlName: "پشتیبانی از راست به چپ",
-    icon: Language,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/icons",
+  //   name: "Icons",
 
-    layout: "/rtl",
-  },
+  //   icon: BubbleChart,
+
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/maps",
+  //   name: "Maps",
+
+  //   icon: LocationOn,
+
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/notifications",
+  //   name: "Notifications",
+
+  //   icon: Notifications,
+
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/rtl-page",
+  //   name: "RTL Support",
+
+  //   icon: Language,
+
+  //   layout: "/rtl",
+  // },
 ];
 
 export default dashboardRoutes;

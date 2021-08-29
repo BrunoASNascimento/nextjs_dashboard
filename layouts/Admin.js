@@ -50,7 +50,7 @@ export default function Admin({ children, ...rest }) {
     setMobileOpen(!mobileOpen);
   };
   const getRoute = () => {
-    return router.pathname !== "/admin/maps";
+    return router.pathname;
   };
   const resizeFunction = () => {
     if (window.innerWidth >= 960) {
@@ -79,7 +79,7 @@ export default function Admin({ children, ...rest }) {
     <div className={classes.wrapper}>
       <Sidebar
         routes={routes}
-        logoText={"Creative Tim"}
+        logoText={"Dashboard"}
         logo={logo}
         image={image}
         handleDrawerToggle={handleDrawerToggle}

@@ -37,6 +37,27 @@ export default function CustomTable(props) {
           {tableData.map((prop, key) => {
             return (
               <TableRow key={key} className={classes.tableBodyRow}>
+                <form
+                  onSubmit={function handleUpdateInfo(e) {
+                    e.preventDefault();
+                    const dadosDoForm = new FormData(e.target);
+                    const dataUpdate = {
+                      id: prop._id,
+                      allocation: dadosDoForm.get(`${key}_allocation`),
+                    };
+
+                    fetch("/api/update-info", {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify(dataUpdate),
+                    }).then(async (response) => {
+                      const dados = await response.json();
+                    });
+                  }}
+                  id={`${key}_form`}
+                ></form>
                 <TableCell
                   className={classes.tableCell}
                   key={`${key}_WorkItemid`}
@@ -86,7 +107,14 @@ export default function CustomTable(props) {
                   className={classes.tableCell}
                   key={`${key}_allocation`}
                 >
-                  {prop.allocation}
+                  <input
+                    id={`${key}_allocation`}
+                    type="number"
+                    name={`${key}_allocation`}
+                    defaultValue={prop.allocation}
+                    form={`${key}_form`}
+                    required
+                  />
                 </TableCell>
                 <TableCell
                   className={classes.tableCell}
@@ -104,7 +132,7 @@ export default function CustomTable(props) {
                   {prop.kr}
                 </TableCell>
                 <TableCell className={classes.tableCell} key={`${key}`}>
-                  <a href={`api/update-info/${key}`}>Update</a>
+                  <button form={`${key}_form`}>Update</button>
                 </TableCell>
               </TableRow>
             );
